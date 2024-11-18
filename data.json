@@ -1,0 +1,18 @@
+[
+    {
+        "name": "FundA",
+        "returns": {
+            "1_year": 5.0,
+            "3_years": 12.0,
+            "5_years": 20.0
+        }
+    },
+    {
+        "name": "FundB",
+        "returns": {
+            "1_year": 7.0,
+            "3_years": 15.0,
+            "5_years": 25.0
+        }
+    }
+]

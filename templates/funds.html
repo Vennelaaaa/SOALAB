@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Funds</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Mutual Funds</h1>
+    <ul>
+        {% for fund in funds %}
+            <li>{{ fund.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>want to know the returns ? </h2>
+    <form action="/mutualfunds/returns" method="get">
+        <input type="text" id="fund" name="fund" placeholder="Enter Fund Name" required>
+        <button type="submit">Get Returns</button>
+    </form>
+
+    <!-- Display error message if it exists -->
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+</body>
+</html>
